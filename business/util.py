@@ -122,7 +122,7 @@ def SaveFile(text, ext):
     my_file = Path(fullPath)
     if not my_file.is_file():
         with open(fullPath, mode="a" , encoding="utf-8") as myfile:
-            totalSize = int(cfg.configParams['HEADER_TOTAL_SIZE'])
+            totalSize = cfg.configParams['HEADER_TOTAL_SIZE']
             baseHeaderSize = len(cfg.configParams['CSV_HEADER'].split(';'))
 
             baixarImagens = cfg.configParams['BAIXAR_IMAGENS']

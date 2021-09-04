@@ -7,21 +7,19 @@ executarCategorias = [
 ]
 
 configParams = {    
-    'PAGE_SIZE':'48',
-    'SCROLL_SIZE':'0',
-    'HEADER_TOTAL_SIZE':'5',
-    'BAIXAR_IMAGENS':'True',
-    'POSSUI_PAGINACAO':'True',
-    'POSSUI_BARRA_PAGINACAO':'False',
-    'POSSUI_TAM_PAGINACAO':'False',
-    'POSSUI_PAGINACAO_INFINITA':'False',
-    'POSSUI_CONT_PRODUTOS':'True',
-    'LIMITE_PRODUTOS':'10',
+    #BASICO
+    'PAGE_SIZE':48,
+    'HEADER_TOTAL_SIZE':5,
+    'BAIXAR_IMAGENS':True,
+    'LIMITE_PRODUTOS':100,
+    'POSSUI_CONT_PRODUTOS':True,
+
+    #ADICIONAIS
     'SITE_DOMAIN':'https://lista.mercadolivre.com.br',
     'CSV_HEADER':'categoria; nome; preco cheio; vendidos; url',
     'PAR_FIND_NUMBER_EXP':'[-+]?[,]?[\d]+(?:,\d\d\d)*[\,]?\d*(?:[eE][-+]?\d+)?',
     'USER_AGENT':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36',
-    'GERAR_EXCEL_POR_CATEGORIA':'True'
+    'GERAR_EXCEL_POR_CATEGORIA':True
 }
 
 configPaths = {

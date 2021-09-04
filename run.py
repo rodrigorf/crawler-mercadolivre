@@ -10,7 +10,7 @@ try:
     totalCategorias = 0    
     categoriasProdutos = {}
     logOut = LogExecucao(totalCategorias)    
-    PAGE_SIZE = int(cfg.configParams['PAGE_SIZE'])
+    PAGE_SIZE = cfg.configParams['PAGE_SIZE']
     habilitarDownloads = cfg.configParams['BAIXAR_IMAGENS']
     gerarExcelPorCategoria = cfg.configParams['GERAR_EXCEL_POR_CATEGORIA'] == 'True'
 
@@ -32,7 +32,7 @@ try:
         prodProcessados = 0            
         forceStop = False
         categoriasProcessadas = 0
-        limiteProdutos = int(cfg.configParams['LIMITE_PRODUTOS'])
+        limiteProdutos = cfg.configParams['LIMITE_PRODUTOS']
         totalCategorias = len(listaDepartamentos)            
 
         for categoria in listaDepartamentos:                
@@ -49,7 +49,7 @@ try:
             pagesNumber = 1
             valideUrlList = []
 
-            if(cfg.configParams['POSSUI_CONT_PRODUTOS'].lower() == 'true'):
+            if(cfg.configParams['POSSUI_CONT_PRODUTOS']):
                 try:
                     objRes = browser.xpath(cfg.queryXPath['RESULT_COUNT'])
                     count = int(util.ExtractNumber(objRes[0].text_content().strip().replace('.','')))                    
