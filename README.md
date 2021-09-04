@@ -7,11 +7,19 @@
 -> Grava xlsx dos itens coletados na pasta data/output<br>
 -> Os links das categorias devem ser informados no arquivo config.py<br>
 
+OBSERVAÇÃO: a responsabilidade de uso é de cada um, utilize para adquirir conhecimento e
+contribuições são bem-vindas, o projeto possui muitas melhorias que podem ser feitas e 
+infinitas formas de chegar ao mesmo resultado.
+
 ## Instruções de instalação
 
-1- Instale o python(criado na  3.8.X) - Gerenciador de pacotes PIP<br>
+1- Instale o python(testado na 3.8.x) - Gerenciador de pacotes PIP<br>
 2- pip install virtualenv<br>
-3- Execute install_dependencies.bat para instalar os packages<br>
+3- Execute: virtualenv venv (pode escolher outro nome mas lembre de modificar no exec.bat se for usar)
+4- Ative o ambiente virtual: cd venv/scripts & activate
+5 - Execute: "pip install -r requirements.txt" para instalar os packages<br>
 
 ## Instruções de configuração
 
+## Seja feliz!
+exec.bat ou python run.py

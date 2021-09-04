@@ -1,3 +1,3 @@
 echo ----- Executando aplicacao -----
-python run.py
+cmd /k "cd /d .\venv\Scripts & activate & cd /d ../.. & python run.py"
 cmd /k pause
