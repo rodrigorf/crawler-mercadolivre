@@ -1,0 +1,9 @@
+chardet
+ftfy
+idna
+lxml
+requests
+urllib3
+wcwidth
+XlsxWriter
+dashtable
