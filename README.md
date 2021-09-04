@@ -20,12 +20,11 @@ infinitas formas de chegar ao mesmo resultado.
 5. Execute: "pip install -r requirements.txt" para instalar os packages<br>
 
 ## Instruções de configuração
-```diff
  * executarCategorias -> lista com os links das categorias do ML
- * + PAGE_SIZE -> total de produtos por página
- * + BAIXAR_IMAGENS -> Se true, serão baixadas para pasta data/output/imagens.
- * + LIMITE_PRODUTOS -> a quantidade que deseja processar, se quiser tudo coloque um valor elevado. Ex: 99999
- * + HEADER_TOTAL_SIZE -> 
+ * PAGE_SIZE -> total de produtos por página
+ * BAIXAR_IMAGENS -> Se true, serão baixadas para pasta data/output/imagens.
+ * LIMITE_PRODUTOS -> a quantidade que deseja processar, se quiser tudo coloque um valor elevado. Ex: 99999
+ * HEADER_TOTAL_SIZE -> 
 
 ## Seja feliz!
 EXECUTE: exec.bat ou python run.py
