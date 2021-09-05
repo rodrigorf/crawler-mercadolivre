@@ -11,6 +11,12 @@
 contribuições são bem-vindas, o projeto possui muitas melhorias que podem ser feitas e 
 infinitas formas de chegar ao mesmo resultado.
 
+## O que este código não é e não faz!
+
+-> Não é multithreaded
+-> Não é escalável
+-> Não usa proxys
+
 ## Instruções de instalação
 
     1. Instale o python(testado na 3.8.x) - Gerenciador de pacotes PIP<br>
@@ -30,4 +36,4 @@ infinitas formas de chegar ao mesmo resultado.
 ## Seja feliz!
     EXECUTE: exec.bat ou python run.py
 
-[Blog](http://rodrigoreisf.com.br)
+[Blog - rodrigoreisf.com.br](http://rodrigoreisf.com.br)
