@@ -7,11 +7,11 @@ from business.logexecucao import LogExecucao
 from entities.product import Product
 
 try:
-    totalCategorias = 0
+    TOTAL_CATEGORIAS = 0
     categoriasProdutos = {}
-    logOut = LogExecucao(totalCategorias)
+    logOut = LogExecucao(TOTAL_CATEGORIAS)
     PAGE_SIZE = cfg.configParams['PAGE_SIZE']
-    habilitarDownloads = cfg.configParams['BAIXAR_IMAGENS']
+    HABILITAR_DOWNLOADS = cfg.configParams['BAIXAR_IMAGENS']
     gerarExcelPorCategoria = cfg.configParams['GERAR_EXCEL_POR_CATEGORIA'] == 'True'
 
     # CLEAN OUTPUT FOLDER
@@ -33,7 +33,7 @@ try:
         forceStop = False
         categoriasProcessadas = 0
         limiteProdutos = cfg.configParams['LIMITE_PRODUTOS']
-        totalCategorias = len(listaDepartamentos)
+        TOTAL_CATEGORIAS = len(listaDepartamentos)
 
         for categoria in listaDepartamentos:
             forceStop = False
@@ -140,7 +140,7 @@ try:
 
                             # FAZER GRAVACAO APENAS UMA VEZ
                             util.RecordOutput(prod, 'CSV', imageList, variantsList,
-                                              removeUrlParams=True, baixarImagem=habilitarDownloads)
+                                              removeUrlParams=True, baixarImagem=HABILITAR_DOWNLOADS)
                             prod = None
                             logOut.LogPrint('', 'INFO')
                             logOut.LogPrint(

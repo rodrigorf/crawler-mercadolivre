@@ -18,7 +18,8 @@ configParams = {
     'SITE_DOMAIN': 'https://lista.mercadolivre.com.br',
     'CSV_HEADER': 'categoria; nome; preco cheio; vendidos; url',
     'PAR_FIND_NUMBER_EXP': r'[-+]?[,]?[\d]+(?:,\d\d\d)*[\,]?\d*(?:[eE][-+]?\d+)?',
-    'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36',
+    'USER_AGENT': r'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 \
+    (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36',
     'GERAR_EXCEL_POR_CATEGORIA': True
 }
 
@@ -33,7 +34,8 @@ configPaths = {
 productXPaths = {
     'STR_NOME': '//div[contains(@class,"title-container")]//h1',
     'NR_TOTAL_VENDAS': '//div[@class="ui-pdp-header"]//span[@class="ui-pdp-subtitle"]',
-    'NR_PRECO_CHEIO': '(//div[contains(@class,"row--price")]//span[@class="price-tag-fraction"])[1]',
+    'NR_PRECO_CHEIO': '(//div[contains(@class,"row--price")] \
+        //span[@class="price-tag-fraction"])[1]',
     'HTM_CARACTERISTICAS': '//div[contains(@class,"specs")]//ul//li',
     'HTM_DESCRICAO': '//div[@class="ui-pdp-description"]',
     'URL_FOTOS': '//figure[@class="ui-pdp-gallery__figure"]//img',
