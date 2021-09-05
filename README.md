@@ -1,5 +1,7 @@
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 [![Build status](https://ci.appveyor.com/api/projects/status/2yw8sjkjqn0c45q4?svg=true)](https://ci.appveyor.com/project/rodrigorf/crawler-mercadolivre)
+[![Python application](https://github.com/rodrigorf/crawler-mercadolivre/actions/workflows/python-app.yml/badge.svg)](https://github.com/rodrigorf/crawler-mercadolivre/actions/workflows/python-app.yml)
+[![Pylint](https://github.com/rodrigorf/crawler-mercadolivre/actions/workflows/pylint.yml/badge.svg)](https://github.com/rodrigorf/crawler-mercadolivre/actions/workflows/pylint.yml)
 
 ## Como funciona?
 
