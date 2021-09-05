@@ -10,7 +10,7 @@ configParams = {
     #BASICO
     'PAGE_SIZE':48,
     'HEADER_TOTAL_SIZE':5,
-    'BAIXAR_IMAGENS':True,
+    'BAIXAR_IMAGENS':False,
     'LIMITE_PRODUTOS':100,
     'POSSUI_CONT_PRODUTOS':True,
 

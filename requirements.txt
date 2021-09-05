@@ -7,3 +7,4 @@ urllib3
 wcwidth
 XlsxWriter
 dashtable
+beautifulsoup4
