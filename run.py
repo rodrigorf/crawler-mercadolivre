@@ -1,10 +1,13 @@
+'''
+Main Execution Module
+'''
+
 import math
 
 import config as cfg
 from business import util
 from business.crawler import Crawler
 from business.logexecucao import LogExecucao
-from entities.product import Product
 
 try:
     TOTAL_CATEGORIAS = 0
@@ -139,8 +142,7 @@ try:
                                 crawler.ProductMapping(prod, xpath, value)
 
                             # FAZER GRAVACAO APENAS UMA VEZ
-                            util.RecordOutput(prod, 'CSV', imageList, variantsList,
-                                              removeUrlParams=True, baixarImagem=HABILITAR_DOWNLOADS)
+                            util.RecordOutput(prod, 'CSV', imageList, variantsList, True, HABILITAR_DOWNLOADS)
                             prod = None
                             logOut.LogPrint('', 'INFO')
                             logOut.LogPrint(
