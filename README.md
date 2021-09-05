@@ -13,8 +13,8 @@ infinitas formas de chegar ao mesmo resultado.
 
 ## O que este código não é e não faz!
 
--> Não é multithreaded
--> Não é escalável
+-> Não é multithreaded<br>
+-> Não é escalável<br>
 -> Não usa proxys
 
 ## Instruções de instalação
