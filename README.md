@@ -1,5 +1,6 @@
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 [![Build status](https://ci.appveyor.com/api/projects/status/2yw8sjkjqn0c45q4?svg=true)](https://ci.appveyor.com/project/rodrigorf/crawler-mercadolivre)
+[![Build status](https://ci.appveyor.com/api/projects/status/2yw8sjkjqn0c45q4/branch/main?svg=true)](https://ci.appveyor.com/project/rodrigorf/crawler-mercadolivre/branch/main)
 
 ## Como funciona?
 
