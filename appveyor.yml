@@ -1,0 +1,24 @@
+# appveyor.yml
+---
+environment:
+  matrix:
+  - TOXENV: py27
+  - TOXENV: py35
+  - TOXENV: py36
+  - TOXENV: py37
+  - TOXENV: py38
+
+build: off
+
+install:
+- pip install tox
+- pip install chardet
+- pip install ftfy
+- pip install idna
+- pip install lxml
+- pip install requests
+- pip install urllib3
+- pip install wcwidth
+- pip install XlsxWriter
+- pip install dashtable
+- pip install beautifulsoup4
