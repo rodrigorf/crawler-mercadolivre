@@ -22,11 +22,11 @@ infinitas formas de chegar ao mesmo resultado.
 
 ## Instruções de instalação
 
-    1. Instale o python(testado na 3.8.x) - Gerenciador de pacotes PIP<br>
-    2. pip install virtualenv<br>
+    1. Instale o python(testado na 3.8.x) - Gerenciador de pacotes PIP
+    2. pip install virtualenv
     3. Execute: virtualenv venv (pode escolher outro nome mas lembre de modificar no exec.bat se for usar)
     4. Ative o ambiente virtual: cd venv/scripts & activate
-    5. Execute: "pip install -r requirements.txt" para instalar os packages<br>
+    5. Execute: "pip install -r requirements.txt" para instalar os packages
 
 ## Instruções de configuração
 
