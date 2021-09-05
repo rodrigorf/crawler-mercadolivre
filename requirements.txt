@@ -8,3 +8,4 @@ wcwidth
 XlsxWriter
 dashtable
 beautifulsoup4
+pylint

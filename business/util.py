@@ -279,7 +279,7 @@ def GellAllImageFiles():
     onlyfiles = [f for f in listdir(LOCAL_PATH) if isfile(join(LOCAL_PATH, f))]
     return onlyfiles
 
-def gerarExcel(nomeCategoria=cfg.configPaths['CFG_NOME_PLANILHA']):
+def GerarExcel(nomeCategoria=cfg.configPaths['CFG_NOME_PLANILHA']):
     fullPath = cfg.configPaths['CFG_CSV_FOLDER'] + cfg.configPaths['CFG_NOME_PLANILHA'] + ".csv"
     if(TransformCsvToExcel(fullPath, nomeCategoria)):
         print('Arquivo XLSX criado.', 'INFO')

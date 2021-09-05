@@ -1,13 +1,18 @@
+"""
+Módulo para forçar a geração do excel com base no csv dos dados coletados
+"""
 import time
+
 import config as cfg
 from business import util
 from business.logexecucao import LogExecucao
 
-logOut = LogExecucao(0)    
+logOut = LogExecucao(0)
 todayDate = time.strftime("%d/%m/%Y")
-todayDate = todayDate.replace('/','.')
+todayDate = todayDate.replace('/', '.')
 fullPath = cfg.configPaths['CFG_CSV_FOLDER'] + "output_" + todayDate + ".csv"
-if(util.TransformCsvToExcel(fullPath)):
+if util.TransformCsvToExcel(fullPath):
     logOut.LogPrint('Arquivo XLSX criado.', 'INFO')
 else:
-    logOut.LogPrint('Nenhum arquivo xlsx foi gerado. Verifique o log.', 'ERROR')
+    logOut.LogPrint(
+        'Nenhum arquivo xlsx foi gerado. Verifique o log.', 'ERROR')
