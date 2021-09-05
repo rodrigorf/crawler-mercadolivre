@@ -5,7 +5,7 @@
 
 ## Como funciona?
 
--> Coleta dados de produtos a partir dos links de categoras do MercadoLivre<br>
+-> Coleta dados de produtos a partir dos links de categorias do MercadoLivre<br>
 -> Grava imagens na pasta data/output/imagens<br>
 -> Grava xlsx dos itens coletados na pasta data/output<br>
 -> Os links das categorias devem ser informados no arquivo config.py<br>
