@@ -50,7 +50,7 @@ try:
             pagesNumber = 1
             valideUrlList = []
 
-            if(cfg.configParams['POSSUI_CONT_PRODUTOS']):
+            if cfg.configParams['POSSUI_CONT_PRODUTOS']:
                 try:
                     objRes = browser.xpath(cfg.queryXPath['RESULT_COUNT'])
                     count = int(util.ExtractNumber(
@@ -61,17 +61,17 @@ try:
                     logOut.LogPrint(
                         'Nenhum produto localizado nesta categoria.', 'INFO')
 
-            if(PAGE_SIZE == 48):
+            if PAGE_SIZE == 48:
                 pagesNumber = math.ceil(float(count)/float(PAGE_SIZE))
             logOut.LogPrint('Número de páginas existentes: ' +
                             str(pagesNumber), 'INFO')
 
             # NEXTPAGE LINK
             objNextPage = browser.xpath(cfg.queryXPath['LNK_NEXT_PAGE'])
-            if(not objNextPage or len(objNextPage) == 0):
+            if not objNextPage or len(objNextPage) == 0:
                 break
             pageUrlBase = objNextPage[0].get('href')
-            if('http' not in pageUrlBase):
+            if 'http' not in pageUrlBase:
                 break
 
             pageIndex = 1
@@ -80,22 +80,22 @@ try:
             pageUrl = urlCategoriaMod
 
             # PAGES LOOP
-            while(pageIndex <= pagesNumber):
+            while pageIndex <= pagesNumber:
                 try:
-                    if(forceStop):
+                    if forceStop:
                         logOut.LogPrint('FORCE STOP!!!', 'INFO')
                         break
 
                     logOut.LogPrint(
                         '*** Processando página número:' + str(pageIndex) + ' *** ', 'INFO')
-                    if(pageIndex > 0):
+                    if pageIndex > 0:
                         pageUrl = basePaginUrl.replace(
                             'PAGEINDEX', str(1 + PAGE_SIZE*pageIndex))
                     else:
                         pageUrl = urlCategoriaMod
                     valideProductList = crawler.ReturnProducts(pageUrl)
 
-                    if(valideProductList is not None):
+                    if valideProductList is not None:
                         logOut.LogPrint(
                             'URLs de produtos encontradas:' + str(len(valideProductList)), 'INFO')
                     else:
@@ -116,23 +116,23 @@ try:
                                 value = 'N/A'
                                 mapping = True
                                 obj = crawler.GetElementObject(browser, xpath)
-                                if(obj is not None and len(obj) > 0):
-                                    if('STR_RESUMO' in xpath):
+                                if obj is not None and len(obj) > 0:
+                                    if 'STR_RESUMO' in xpath:
                                         value = obj[0]
-                                    elif('STR_' in xpath):
+                                    elif 'STR_' in xpath:
                                         value = obj[0].text_content().strip()
-                                    elif('NR_' in xpath):
+                                    elif 'NR_' in xpath:
                                         value = obj[0].text_content().strip()
-                                    elif('HTM_' in xpath):
+                                    elif 'HTM_' in xpath:
                                         value = obj
-                                    elif('URL_' in xpath):
+                                    elif 'URL_' in xpath:
                                         value = obj
-                                    elif('LST_' in xpath):
+                                    elif 'LST_' in xpath:
                                         value = obj
-                                    elif('OBJ_' in xpath):
+                                    elif 'OBJ_' in xpath:
                                         value = obj
 
-                                if(type(value) is not list and value is not None):
+                                if type(value) is not list and value is not None:
                                     logOut.LogPrint(
                                         xpath + ':' + value.strip(), 'INFO')
 
@@ -150,7 +150,7 @@ try:
                             logOut.LogPrint(
                                 'Produtos processados: ' + str(prodProcessados), 'INFO')
 
-                            if(prodProcessados >= limiteProdutos):
+                            if prodProcessados >= limiteProdutos:
                                 forceStop = True
                                 prodProcessados = 0
                                 break
@@ -166,11 +166,11 @@ try:
 
             categoriasProcessadas += 1
             logOut.execucaoAtual = categoriasProcessadas
-            if(valideProductList is not None):
+            if valideProductList is not None:
                 categoriasProdutos[nomeCategoria] = int(
                     categoriasProdutos[nomeCategoria]) + len(valideProductList)
 
-            if(gerarExcelPorCategoria):
+            if gerarExcelPorCategoria:
                 util.GerarExcel(nomeCategoria)
                 util.CleanOutputFile()
 
@@ -187,7 +187,7 @@ except Exception as e:
 finally:
     print('----- END OF CRAWLER -----')
     # GENERATE THE XLSL FILE BASED ON CSV
-    if(not gerarExcelPorCategoria):
+    if not gerarExcelPorCategoria:
         util.GerarExcel()
 
     logOut.LogPrint('', 'INFO')
