@@ -1,4 +1,5 @@
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](rodrigorf33@gmail.com)
 
 ## Como funciona?
 
