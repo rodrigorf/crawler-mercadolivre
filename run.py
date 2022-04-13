@@ -43,7 +43,7 @@ try:
             nomeCategoria = categoria.nome
             urlCategoriaMod = categoria.href
             logOut.LogPrint('CATEGORIA ATUAL: ' + nomeCategoria +
-                            '-> ' + util.fix_text(urlCategoriaMod), 'INFO')
+                            '-> ' + util.fix_text(urlCategoriaMod))
             categoriasProdutos[nomeCategoria] = 0
 
             browser = crawler.GetRequestString(urlCategoriaMod)
@@ -58,16 +58,15 @@ try:
                     objRes = browser.xpath(cfg.queryXPath['RESULT_COUNT'])
                     count = int(util.ExtractNumber(
                         objRes[0].text_content().strip().replace('.', '')))
-                    logOut.LogPrint('Result count: ' + str(count), 'INFO')
+                    logOut.LogPrint('Result count: ' + str(count))
                     totalProdCont += count
                 except Exception:
-                    logOut.LogPrint(
-                        'Nenhum produto localizado nesta categoria.', 'INFO')
+                    logOut.LogPrint('Nenhum produto localizado nesta categoria.', 'ERRO')
 
             if PAGE_SIZE == 48:
                 pagesNumber = math.ceil(float(count)/float(PAGE_SIZE))
             logOut.LogPrint('Número de páginas existentes: ' +
-                            str(pagesNumber), 'INFO')
+                            str(pagesNumber))
 
             # NEXTPAGE LINK
             objNextPage = browser.xpath(cfg.queryXPath['LNK_NEXT_PAGE'])
@@ -86,11 +85,11 @@ try:
             while pageIndex <= pagesNumber:
                 try:
                     if forceStop:
-                        logOut.LogPrint('FORCE STOP!!!', 'INFO')
+                        logOut.LogPrint('FORCE STOP!!!')
                         break
 
                     logOut.LogPrint(
-                        '*** Processando página número:' + str(pageIndex) + ' *** ', 'INFO')
+                        '*** Processando página número:' + str(pageIndex) + ' *** ')
                     if pageIndex > 0:
                         pageUrl = basePaginUrl.replace(
                             'PAGEINDEX', str(1 + PAGE_SIZE*pageIndex))
@@ -100,7 +99,7 @@ try:
 
                     if valideProductList is not None:
                         logOut.LogPrint(
-                            'URLs de produtos encontradas:' + str(len(valideProductList)), 'INFO')
+                            'URLs de produtos encontradas:' + str(len(valideProductList)))
                     else:
                         break
 
@@ -108,7 +107,7 @@ try:
                     for prod in valideProductList:
                         try:
                             logOut.LogPrint(
-                                'URL Produto Atual:' + prod.url, 'INFO')
+                                'URL Produto Atual:' + prod.url)
                             browser = crawler.GetRequestStringEncoded(
                                 prod.url, 'UTF-8', usePyQT=False)
 
@@ -137,20 +136,20 @@ try:
 
                                 if type(value) is not list and value is not None:
                                     logOut.LogPrint(
-                                        xpath + ':' + value.strip(), 'INFO')
+                                        xpath + ':' + value.strip())
 
                                 crawler.ProductMapping(prod, xpath, value)
 
                             # FAZER GRAVACAO APENAS UMA VEZ
                             util.RecordOutput(prod, 'CSV', imageList, variantsList, True, HABILITAR_DOWNLOADS)
                             prod = None
-                            logOut.LogPrint('', 'INFO')
+                            logOut.LogPrint('')
                             logOut.LogPrint(
-                                '---------- FIM PRODUTO ----------', 'INFO')
-                            logOut.LogPrint('', 'INFO')
+                                '---------- FIM PRODUTO ----------')
+                            logOut.LogPrint('')
                             prodProcessados += 1
                             logOut.LogPrint(
-                                'Produtos processados: ' + str(prodProcessados), 'INFO')
+                                'Produtos processados: ' + str(prodProcessados))
 
                             if prodProcessados >= limiteProdutos:
                                 forceStop = True
@@ -158,13 +157,12 @@ try:
                                 break
                         except Exception as pe:
                             logOut.LogPrint(
-                                'Erro em produto: Xpath(' + xpath + ') - ' + str(pe), 'ERROR')
+                                'Erro em produto: Xpath(' + xpath + ') - ' + str(pe), 'ERRO')
                 except Exception as et:
-                    logOut.LogPrint('Erro na página:' + str(et), 'ERROR')
+                    logOut.LogPrint('Erro na página:' + str(et), 'ERRO')
                 finally:
                     pageIndex = pageIndex + 1
-                    logOut.LogPrint(
-                        '========== Indo para próxima página. ========== ', 'INFO')
+                    logOut.LogPrint('========== Indo para próxima página. ========== ', 'ERRO')
 
             categoriasProcessadas += 1
             logOut.execucaoAtual = categoriasProcessadas
@@ -176,24 +174,23 @@ try:
                 util.GerarExcel(nomeCategoria)
                 util.CleanOutputFile()
 
-        logOut.LogPrint('Total de produtos: ' + str(totalProdCont), 'INFO')
+        logOut.LogPrint('Total de produtos: ' + str(totalProdCont))
     except Exception as fe:
-        logOut.LogPrint('Erro na consulta:' + str(fe), 'ERROR')
+        logOut.LogPrint('Erro na consulta:' + str(fe), 'ERRO')
     finally:
-        logOut.LogPrint('', 'INFO')
-        logOut.LogPrint(
-            '========== Query list end. Calling next query URL. ========== ', 'INFO')
-        logOut.LogPrint('', 'INFO')
+        logOut.LogPrint('')
+        logOut.LogPrint('========== Query list end. Calling next query URL. ========== ')
+        logOut.LogPrint('')
 except Exception as e:
-    print('Erro:' + str(e))
+    print('Erro:' + str(e), 'ERRO')
 finally:
     print('----- END OF CRAWLER -----')
     # GENERATE THE XLSL FILE BASED ON CSV
     if not gerarExcelPorCategoria:
         util.GerarExcel()
 
-    logOut.LogPrint('', 'INFO')
-    logOut.LogPrint('----- CATEGORIAS PROCESSADAS -----', 'INFO')
+    logOut.LogPrint('')
+    logOut.LogPrint('----- CATEGORIAS PROCESSADAS -----')
     for nome, valor in categoriasProdutos.items():
         logOut.LogPrint(
-            'Categoria:{0} -- Produtos:{1}'.format(nome, valor), 'INFO')
+            'Categoria:{0} -- Produtos:{1}'.format(nome, valor))
