@@ -282,6 +282,6 @@ def GellAllImageFiles():
 def GerarExcel(nomeCategoria=cfg.configPaths['CFG_NOME_PLANILHA']):
     fullPath = cfg.configPaths['CFG_CSV_FOLDER'] + cfg.configPaths['CFG_NOME_PLANILHA'] + ".csv"
     if(TransformCsvToExcel(fullPath, nomeCategoria)):
-        print('Arquivo XLSX criado.', 'INFO')
+        print('Arquivo XLSX criado.')
     else:
-        print('Nenhum arquivo xlsx foi gerado. Verifique o log.', 'ERROR')
+        print('Nenhum arquivo xlsx foi gerado. Verifique o log.')

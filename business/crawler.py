@@ -177,6 +177,6 @@ class Crawler:
                     continue
                                     
         except Exception as ex:
-            print('ERRO --> Retorn produtos:' + str(ex))
+            print('ERRO --> Retorn produtos:' + str(ex), 'ERRO')
             return None 
         return tempList

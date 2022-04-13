@@ -12,7 +12,7 @@ todayDate = time.strftime("%d/%m/%Y")
 todayDate = todayDate.replace('/', '.')
 fullPath = cfg.configPaths['CFG_CSV_FOLDER'] + "output_" + todayDate + ".csv"
 if util.TransformCsvToExcel(fullPath):
-    logOut.LogPrint('Arquivo XLSX criado.', 'INFO')
+    logOut.LogPrint('Arquivo XLSX criado.')
 else:
     logOut.LogPrint(
-        'Nenhum arquivo xlsx foi gerado. Verifique o log.', 'ERROR')
+        'Nenhum arquivo xlsx foi gerado. Verifique o log.')
