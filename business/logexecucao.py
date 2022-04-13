@@ -11,4 +11,3 @@ class LogExecucao:
             logging.info(text)
         elif(logType == 'ERRO'):
             logging.error(text)
-
