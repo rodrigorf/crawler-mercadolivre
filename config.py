@@ -32,8 +32,7 @@ configPaths = {
 productXPaths = {
     'STR_NOME': '//div[contains(@class,"title-container")]//h1',
     'NR_TOTAL_VENDAS': '//div[@class="ui-pdp-header"]//span[@class="ui-pdp-subtitle"]',
-    'NR_PRECO_CHEIO': '(//div[contains(@class,"row--price")] \
-        //span[@class="price-tag-fraction"])[1]',
+    'NR_PRECO_BASE': '//div[contains(@class,"row--price")]//span[@class="andes-money-amount__fraction"]',
     'HTM_CARACTERISTICAS': '//div[contains(@class,"specs")]//ul//li',
     'HTM_DESCRICAO': '//div[@class="ui-pdp-description"]',
     'URL_FOTOS': '//figure[@class="ui-pdp-gallery__figure"]//img',

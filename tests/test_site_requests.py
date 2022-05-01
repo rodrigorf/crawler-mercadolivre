@@ -60,7 +60,7 @@ def test_load_produto_nome(load_produto_unico):
     nome = objNome[0].text_content().strip()
     
     assert objNome is not None and len(objNome) > 0
-    assert type(objValue) is str
+    assert type(nome) is str
 
 def test_load_produto_total_vendas(load_produto_unico):
     browser = load_produto_unico
@@ -70,3 +70,10 @@ def test_load_produto_total_vendas(load_produto_unico):
     assert objVendas is not None and len(objVendas) > 0
     assert totalVendas >= 0
 
+def test_load_produto_total_preco(load_produto_unico):
+    browser = load_produto_unico
+    objPreco = crawler.GetElementObject(browser, 'NR_PRECO_BASE')
+    precoProduto = int(util.ExtractNumber(objPreco[0].text_content().strip()))
+
+    assert objPreco is not None and len(objPreco) > 0
+    assert precoProduto > 0
