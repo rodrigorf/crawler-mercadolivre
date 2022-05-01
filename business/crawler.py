@@ -115,7 +115,7 @@ class Crawler:
             for crumb in value:
                 categoria.append(crumb.text_content().strip())
             prod.categoria = ' > '.join(categoria)
-        elif(xpath == 'NR_PRECO_CHEIO'):
+        elif(xpath == 'NR_PRECO_BASE'):
             if(prod.precoCheio == ''):
                 prod.precoCheio = value  
         elif(xpath == 'NR_TOTAL_VENDAS'):
