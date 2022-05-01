@@ -2,7 +2,6 @@
 ADICIONE ABAIXO AS URLS DAS CATEGORIAS
 '''
 executarCategorias = [
-    'https://lista.mercadolivre.com.br/amortecedor-cofap-150#D[A:amortecedor%20cofap%20150]',
     'https://lista.mercadolivre.com.br/manopla-onix#D[A:manopla%20onix]'
 ]
 
