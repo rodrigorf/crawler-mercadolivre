@@ -65,8 +65,8 @@ def test_load_produto_nome(load_produto_unico):
 def test_load_produto_total_vendas(load_produto_unico):
     browser = load_produto_unico
     objVendas = crawler.GetElementObject(browser, 'NR_TOTAL_VENDAS')
-    valorVenda = util.ExtractNumber(objVendas[0].text_content().strip()) 
+    totalVendas = int(util.ExtractNumber(objVendas[0].text_content().strip()))
 
     assert objVendas is not None and len(objVendas) > 0
-    assert type(objValue) is str
+    assert totalVendas >= 0
 
