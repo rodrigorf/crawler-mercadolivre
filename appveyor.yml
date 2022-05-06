@@ -2,7 +2,7 @@
 ---
 environment:
   matrix:
-  - TOXENV: py38
+  - TOXENV: py310
 
 build: off
 
@@ -17,3 +17,7 @@ install:
 - pip install XlsxWriter
 - pip install dashtable
 - pip install beautifulsoup4
+- pip install tox
+
+test_script:
+  - py -m tox
