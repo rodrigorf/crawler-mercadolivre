@@ -20,4 +20,4 @@ install:
 - pip install tox
 
 test_script:
-  - py -m tox
+  - python -m tox
